@@ -12,8 +12,9 @@ export const SearchBox = () => {
   const dispatch = useDispatch();
 
   return (
-    <div>
-      <label className={styles.search}>
+    <div className={styles.container}>
+      <form className={styles.form}>
+        <label className={styles.label}>
         Filter contacts by name
         <input className={styles.input} value={filter} type="text" onChange={(event) => {
           const action = changeFilter(event.target.value);
@@ -22,14 +23,15 @@ export const SearchBox = () => {
         />
       </label>
 
-        <label className={styles.search}>
+        <label className={styles.label}>
         Filter contacts by phone number
         <input className={styles.input} value={numFilter} type="text" onChange={(event) => {
           const action = changeFilterByNum(event.target.value);
           dispatch(action);
         }}
         />
-      </label>
+        </label>
+      </form>
     </div>
   )
 };

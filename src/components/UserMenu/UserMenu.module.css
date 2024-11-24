@@ -1,0 +1,27 @@
+.text {
+  font-weight: 600;
+  font-size: 20px;
+  color: #fffea5;
+}
+
+.container {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn {
+  padding: 12px 18px;
+  background-color: #fffea5;
+  color: #6e6cff;
+  font-weight: 600;
+  font-size: 16px;
+  align-self: center;
+  border: none;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background-color: #f9acfc;
+}

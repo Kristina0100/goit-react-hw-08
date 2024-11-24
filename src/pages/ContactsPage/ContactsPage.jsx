@@ -4,6 +4,7 @@ import { fetchContacts } from '../../redux/contacts/operations';
 import { ContactForm } from '../../components/ContactForm/ContactForm';
 import { SearchBox } from '../../components/SearchBox/SearchBox';
 import { ContactList } from '../../components/ContactList/ContactList';
+import { DeleteModal } from '../../components/DeleteModal/DeleteModal';
 
 export default function  ContactsPage () {
 
@@ -17,12 +18,13 @@ export default function  ContactsPage () {
       
     return (
         <>
-            <h1>Phonebook</h1>
             <ContactForm />
             <SearchBox />
-            <div>{isLoading && !error && 'Request in progress...'}
+            <div>
+                {isLoading && !error && 'Request in progress...'}
             </div>
             <ContactList />
+            <DeleteModal />
         </>
     )
 };

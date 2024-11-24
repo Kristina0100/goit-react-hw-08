@@ -1,45 +1,65 @@
-.form {
-  max-width: 242px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-top: 20px;
-  border: 1px solid dodgerblue;
-  border-radius: 6px;
-  padding: 12px;
+.container {
+  padding: 40px 0 0 40px;
+  margin-bottom: 40px;
 }
 
-.name,
-.number {
+.title {
+  color: #6e6cff;
+  margin-bottom: 30px;
+}
+
+.form {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 30px 50px;
+  border: 3px solid #6e6cff;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.label {
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
+  font-weight: 600;
+  color: #6e6cff;
 }
 
-.field {
+.input {
+  min-width: 250px;
   outline: none;
-  height: 18px;
-  padding: 2px 5px;
-  border: 1px solid darkblue;
-  border-radius: 3px;
+  height: 20px;
+  padding: 7px 10px;
+  border: 2px solid #c2ffc1;
+  color: #363636;
+  font-size: 16px;
+  border-radius: 5px;
+  caret-color: #6e6cff;
 }
 
-.field:focus {
-  border-color: dodgerblue;
+.input:focus {
+  border-color: #6e6cff;
 }
 
-.btn {
-  padding: 8px;
+.button {
+  padding: 15px 22px;
+  background-color: #c2ffc1;
+  color: #6e6cff;
+  font-weight: 600;
+  font-size: 16px;
   align-self: center;
   border: none;
-  border-radius: 3px;
+  border-radius: 5px;
 }
 
-.btn:hover {
-  background-color: lightskyblue;
+.button:hover {
+  background-color: #6e6cff;
+  color: #c2ffc1;
 }
 
 .error {
   font-size: 14px;
-  color: red;
+  color: #ff7575;
 }

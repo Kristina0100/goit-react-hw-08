@@ -1,0 +1,47 @@
+.modal {
+  width: 50vh;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #f9acfc;
+  padding: 20px;
+  gap: 30px;
+}
+
+.wrap {
+  display: flex;
+  gap: 30px;
+}
+
+.text {
+  font-size: 20px;
+  font-weight: 600;
+  color: #6e6cff;
+}
+
+.deleteBtn,
+.cancelBtn {
+  font-weight: 600;
+  font-size: 16px;
+  align-self: center;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 5px;
+}
+
+.deleteBtn {
+  background-color: #ff7575;
+  color: #6e6cff;
+}
+
+.cancelBtn {
+  background-color: #fffea5;
+  color: #6e6cff;
+}
+
+.deleteBtn:hover,
+.cancelBtn:hover {
+  color: #363636;
+}

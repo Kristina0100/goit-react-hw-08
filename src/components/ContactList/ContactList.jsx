@@ -14,13 +14,15 @@ export const ContactList = () => {
   );
 
     return (
-        <ul className={styles.contacts}>
+        <div className={styles.container}>
+            <ul className={styles.contacts}>
             {filteredContacts.map(contact => {
                 return (<li key={contact.id}>
                     <Contact
                         contact={contact} />
                 </li>)
             })}
-        </ul>
+            </ul>
+        </div>
     )
 };

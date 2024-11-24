@@ -2,7 +2,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { AddLoginSchema } from "../../utils/schemas";
 import { useDispatch } from 'react-redux';
 import { login } from '../../redux/auth/operations';
-// import styles from './LoginForm.module.css';
+import styles from './LoginForm.module.css';
 
 export const LoginForm = () => {
 
@@ -20,30 +20,23 @@ export const LoginForm = () => {
         password: values.password,
       })
     )
-    //       .unwrap()
-    //       .then(() => {
-    //         console.log('login success');
-    //       })
-    //       .catch(() => {
-    //         console.log('login error');
-    //       });
     actions.resetForm();
   };
 
   return (
-    <div>
+    <div className={styles.container}>
       <Formik initialValues={INITIAL_VALUES} onSubmit={handleSubmit} validationSchema={AddLoginSchema}>
-        <Form>
-          <label>Email
-            <Field type="email" name="email" />
-            <ErrorMessage name="email" component="span" />
+        <Form className={styles.form}>
+          <label className={styles.label}>Email
+            <Field className={styles.input} type="email" name="email" />
+            <ErrorMessage className={styles.error} name="email" component="span" />
           </label>
       
-          <label >Password
-            <Field type="password" name="password" />
-            <ErrorMessage name="password" component="span" />
+          <label className={styles.label}>Password
+            <Field className={styles.input} type="password" name="password" />
+            <ErrorMessage className={styles.error} name="password" component="span" />
           </label>
-          <button type='submit'>Log In</button>
+          <button className={styles.button} type='submit'>Log In</button>
         </Form>
       </Formik>
     </div>

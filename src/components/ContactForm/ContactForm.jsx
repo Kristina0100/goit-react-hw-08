@@ -2,7 +2,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { AddContactSchema } from "../../utils/schemas";
 import { useDispatch } from "react-redux";
 import { addContact } from "../../redux/contacts/operations";
-import {Toaster, toast } from 'react-hot-toast';
+import { Toaster, toast } from 'react-hot-toast';
 
 import styles from "./ContactForm.module.css"
 
@@ -24,24 +24,26 @@ export const ContactForm = () => {
         style: {
           background: '#c2ffc1',
           color: '#363636',
+          fontWeight: '600',
         },
       });
   };
 
   return (
-    <div>
+    <div className={styles.container}>
+      <h1 className={styles.title}>Phonebook</h1>
       <Formik initialValues={INITIAL_VALUES} onSubmit={handleSubmit} validationSchema={AddContactSchema}>
         <Form className={styles.form}>
-          <label className={styles.name}>Name
-            <Field className={styles.field} type="text" name="name" />
+          <label className={styles.label}>Name
+            <Field className={styles.input} type="text" name="name" />
             <ErrorMessage className={styles.error} name="name" component="span" />
           </label>
       
-          <label className={styles.number}>Number
-            <Field className={styles.field} type="text" name="number" />
+          <label className={styles.label}>Number
+            <Field className={styles.input} type="text" name="number" />
             <ErrorMessage className={styles.error} name="number" component="span" />
           </label>
-          <button className={styles.btn} type='submit'>Add contact</button>
+          <button className={styles.button} type='submit'>Add contact</button>
         </Form>
       </Formik>
        <Toaster
@@ -49,7 +51,7 @@ export const ContactForm = () => {
         reverseOrder={false}
         gutter={8}
         containerStyle={{
-          top: 20,
+          top: 40,
         }}
       />
     </div>

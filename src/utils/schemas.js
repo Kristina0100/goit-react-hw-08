@@ -23,7 +23,7 @@ export const AddContactSchema = Yup.object().shape(
 
 
     export const AddRegistrationSchema =  Yup.object().shape(
-    {
+     {
     name: Yup.string()
     .min(3, "Too short!")
     .max(50, "Too long!")
