@@ -1,11 +1,14 @@
 import { useDispatch, useSelector } from "react-redux";
-import { changeFilter, selectNameFilter} from "../../redux/filtersSlice";
+import { changeFilter,  changeFilterByNum } from "../../redux/filters/slice";
+import { selectNameFilter, selectNumFilter } from '../../redux/filters/selectors';
 
 import styles from "./SearchBox.module.css";
 
-const SearchBox = () => {
+export const SearchBox = () => {
 
   const filter = useSelector(selectNameFilter);
+  const numFilter = useSelector(selectNumFilter);
+
   const dispatch = useDispatch();
 
   return (
@@ -18,8 +21,15 @@ const SearchBox = () => {
         }}
         />
       </label>
+
+        <label className={styles.search}>
+        Filter contacts by phone number
+        <input className={styles.input} value={numFilter} type="text" onChange={(event) => {
+          const action = changeFilterByNum(event.target.value);
+          dispatch(action);
+        }}
+        />
+      </label>
     </div>
   )
 };
-
-export default SearchBox;

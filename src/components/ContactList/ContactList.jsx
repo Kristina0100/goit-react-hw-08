@@ -1,12 +1,17 @@
 import { useSelector } from "react-redux";
-import { selectFilteredContacts } from '../../redux/contactsSlice';
+import { selectFilteredContacts, selectFilteredContactsByNum } from '../../redux/contacts/selectors';
+import { Contact } from "../Contact/Contact";
 
-import Contact from "../Contact/Contact";
 import styles from "./ContactList.module.css";
 
-const ContactList = () => {
+export const ContactList = () => {
 
-    const filteredContacts = useSelector(selectFilteredContacts);
+    const nameFilter = useSelector(selectFilteredContacts);
+    const numberFilter = useSelector(selectFilteredContactsByNum);
+
+    const filteredContacts = nameFilter.filter((contact) =>
+    numberFilter.includes(contact)
+  );
 
     return (
         <ul className={styles.contacts}>
@@ -19,5 +24,3 @@ const ContactList = () => {
         </ul>
     )
 };
-
-export default ContactList;

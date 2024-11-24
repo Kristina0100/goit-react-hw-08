@@ -1,11 +1,12 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { AddContactSchema } from "../../utils/schemas";
 import { useDispatch } from "react-redux";
-import { addContact } from "../../redux/contactsOps";
+import { addContact } from "../../redux/contacts/operations";
+import {Toaster, toast } from 'react-hot-toast';
 
 import styles from "./ContactForm.module.css"
 
-const ContactForm = () => {
+export const ContactForm = () => {
 
   const INITIAL_VALUES = {
     name: '',
@@ -17,6 +18,14 @@ const ContactForm = () => {
   const handleSubmit = (values, actions) => {
     dispatch(addContact({ name: values.name, number: values.number }));
     actions.resetForm();
+    toast.success('Successfully added', {
+        position: 'top-center',
+        duration: 3000,
+        style: {
+          background: '#c2ffc1',
+          color: '#363636',
+        },
+      });
   };
 
   return (
@@ -35,8 +44,14 @@ const ContactForm = () => {
           <button className={styles.btn} type='submit'>Add contact</button>
         </Form>
       </Formik>
+       <Toaster
+        position="top-center"
+        reverseOrder={false}
+        gutter={8}
+        containerStyle={{
+          top: 20,
+        }}
+      />
     </div>
   )
 };
-
-export default ContactForm;
