@@ -14,7 +14,7 @@ export const AddContactSchema = Yup.object().shape(
 
     export const AddLoginSchema =  Yup.object().shape(
         {
-    email: Yup.string().email("Must be a valid email!").required("Required"),
+    email: Yup.string().email("Must be a valid email!").required("Email is required"),
     password: Yup.string()
     .min(8, 'Password must be at least 8 characters long')
     .max(20, "Too long!")
@@ -28,7 +28,7 @@ export const AddContactSchema = Yup.object().shape(
     .min(3, "Too short!")
     .max(50, "Too long!")
     .required("Name is required"),
-    email: Yup.string().email("Must be a valid email!").required("Required"),
+    email: Yup.string().email("Must be a valid email!").required("Email is required"),
     password: Yup.string()
     .min(8, 'Password must be at least 8 characters long')
     .max(20, "Too long!")

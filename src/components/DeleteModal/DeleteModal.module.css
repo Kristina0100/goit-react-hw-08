@@ -31,17 +31,22 @@
   border-radius: 5px;
 }
 
+.deleteBtn,
+.cancelBtn {
+  color: #6e6cff;
+  transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
 .deleteBtn {
   background-color: #ff7575;
-  color: #6e6cff;
 }
 
 .cancelBtn {
   background-color: #fffea5;
-  color: #6e6cff;
 }
 
 .deleteBtn:hover,
 .cancelBtn:hover {
   color: #363636;
+  transform: scale(1.1);
 }

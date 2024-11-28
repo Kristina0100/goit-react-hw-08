@@ -30,6 +30,7 @@
 .input {
   min-width: 250px;
   outline: none;
+  margin-top: 3px;
   height: 20px;
   padding: 7px 10px;
   border: 2px solid #c2ffc1;
@@ -37,6 +38,7 @@
   font-size: 16px;
   border-radius: 5px;
   caret-color: #6e6cff;
+  transition: border-color 0.2s ease-in-out;
 }
 
 .input:focus {
@@ -52,6 +54,7 @@
   align-self: center;
   border: none;
   border-radius: 5px;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
 .button:hover {
@@ -62,4 +65,5 @@
 .error {
   font-size: 14px;
   color: #ff7575;
+  margin-top: 3px;
 }
